@@ -71,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 
 html, body {
   height: 100%;
+  color: #000;
 }
 
 .wrapper {
@@ -177,4 +178,77 @@ html, body {
 
 .main__dots span:last-child {
   margin-right: 0;
+}
+
+.inclusive {
+  padding: 80px 0 100px 0;
+}
+
+.inclusive__container {
+  max-width: 985px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.inclusive__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inclusive__title {
+  text-align: center;
+}
+
+.inclusive__uptitle {
+  font-size: 60px;
+  font-weight: 200;
+  margin-bottom: 16px;
+}
+
+.inclusive__title-h1 {
+  margin-bottom: 35px;
+}
+
+.inclusive__subtitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 28px;
+}
+
+.inclusive__line {
+  width: 80px;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.text {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.text p {
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.text p.text_centered {
+  text-align: center;
+}
+
+.text p:last-child {
+  margin-bottom: 0;
 }
