@@ -146,14 +146,15 @@ html, body {
   font-size: 220px;
   font-weight: 100;
   text-transform: uppercase;
-  letter-spacing: 20px;
+  letter-spacing: 21px;
+  margin-bottom: -5px;
 }
 
 .main__subtitle {
   font-family: "Raleway", sans-serif;
   font-size: 64px;
   font-weight: 700;
-  letter-spacing: 5.82px;
+  letter-spacing: 7px;
 }
 
 .main__dots {
@@ -217,10 +218,11 @@ html, body {
   font-weight: 400;
   text-align: center;
   margin-bottom: 40px;
-  line-height: 28px;
+  line-height: 25px;
 }
 
 .inclusive__line {
+  display: inline-block;
   margin-bottom: 60px;
 }
 
@@ -240,24 +242,26 @@ html, body {
 }
 
 .quotes__slider-box {
-  width: 500px;
+  width: 520px;
   font-size: 36px;
 }
 
 .quotes__slider-text {
   font-weight: 700;
   line-height: 48px;
-  margin-bottom: 70px;
+  margin-bottom: 55px;
+  letter-spacing: -3.1px;
 }
 
 .quotes__slider-text-autor {
   font-weight: 300;
+  letter-spacing: -1px;
 }
 
 .quotes__slider-dots {
   position: absolute;
   left: 0;
-  bottom: -50px;
+  bottom: -63px;
   width: 100%;
   height: 10px;
   display: flex;
@@ -268,6 +272,15 @@ html, body {
   height: 10px;
   border: 1px solid #626262;
   border-radius: 50%;
+  margin: 0 5px;
+}
+
+.quotes__slider-dots span:first-child {
+  margin-left: 0;
+}
+
+.quotes__slider-dots span:last-child {
+  margin-right: 0;
 }
 
 .quotes__right-column {
@@ -289,9 +302,7 @@ html, body {
 }
 
 .reasons__line {
-  width: 80px;
-  height: 2px;
-  background-color: #000;
+  display: inline-block;
   margin-bottom: 100px;
 }
 
@@ -302,7 +313,7 @@ html, body {
 }
 
 .reasons__item {
-  padding: 55px 100px 60px 50px;
+  padding: 49px 80px 30px 50px;
   border: 1px solid #dcdcdc;
 }
 
@@ -310,14 +321,16 @@ html, body {
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
+  letter-spacing: -2.8px;
 }
 
 .reasons__item-text {
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 34px;
+  letter-spacing: -0.8px;
 }
 
 .reasons__item-author {
@@ -356,6 +369,7 @@ html, body {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 60px;
+  letter-spacing: 0.9px;
 }
 
 .line {
@@ -373,7 +387,7 @@ html, body {
 
 .text p {
   text-align: justify;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .text p.text_centered {
