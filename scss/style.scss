@@ -13,9 +13,9 @@ html, body {
 }
 
 .container {
-	width: 1430px;
+	max-width: 1440px;
 	height: 100%;
-	padding: 0 15px;
+	padding: 0 20px;
 	margin: 0 auto;
 }
 
@@ -43,6 +43,11 @@ html, body {
 		font-weight: 700;
 		letter-spacing: 6px;
 		text-transform: uppercase;
+
+		@media (max-width: 767px) {
+			font-size: 24px;
+			padding: 20px 14px;
+		}
 	}
 
 	&__menu {
@@ -52,6 +57,114 @@ html, body {
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
+		cursor: pointer;
+		position: relative;
+		z-index: 3;
+		transition: 0.5s;
+
+		&::before,
+		&::after {
+			content: '';
+			width: 52px;
+			height: 4px;
+			background-color: #fff;
+			position: absolute;
+			left: 0;
+			transition: 0.5s;
+		}
+		&::before {
+			top: -9px;
+		}
+		&::after {
+			bottom: -9px;
+		}
+
+		&._active {
+			&::before,
+			&::after {
+				transition: 0.5s;
+				left: 7px;
+			}
+			&::before {
+				transform-origin: top left;
+				transform: rotate(45deg) translateY(-9px);
+				top: -39px;
+			}
+			&::after {
+				transform: rotate(-45deg) translateY(-9px);
+				bottom: 31px;
+			}
+			transform: translateY(10px);
+		}
+	}
+
+	&__nav {
+		
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(#0d1013, 0.9);
+		position: absolute;
+		padding-top: 190px;
+		padding-bottom: 120px;
+		padding-left: 300px;
+		top: 0;
+		left: 0;
+		overflow: scroll;
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.2s;
+
+		@media (max-height: 600px) {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		@media (max-width: 992px) {
+			padding-left: 150px;
+		}
+		@media (max-width: 767px) {
+			padding-top: 130px;
+			padding-bottom: 90px;
+			padding-left: 0;
+		}
+
+		& ul {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			@media (max-width: 767px) {
+				align-items: center;
+				justify-content: space-around;
+			}
+		}
+
+		&._active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__link {
+		font-family: $font-rare;
+		font-size: 50px;
+		font-weight: 700;
+		letter-spacing: 10px;
+		color: #626262;
+		text-transform: uppercase;
+		transition: 0.2s;
+
+		@media (max-width: 767px) {
+			font-size: 32px;
+		}
+		@media (max-width: 454px) {
+			font-size: 24px;
+		}
+		
+		&:hover {
+			transition: 0.2s;
+			color: #fff;
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -73,6 +186,10 @@ html, body {
 		align-items: flex-end;
 		flex-basis: 65%;
 		color: #ffffff;
+
+		@media (max-width: 767px) {
+			align-items: center;
+		}
 	}
 
 	&__title {
@@ -82,6 +199,20 @@ html, body {
 		text-transform: uppercase;
 		letter-spacing: 21px;
 		margin-bottom: -5px;
+
+		@media (max-width: 1200px) {
+			font-size: 190px;
+		}
+		@media (max-width: 992px) {
+			font-size: 165px;
+		}
+		@media (max-width: 767px) {
+			font-size: 145px;
+		}
+		@media (max-width: 550px) {
+			font-size: 70px;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__subtitle {
@@ -89,6 +220,19 @@ html, body {
 		font-size: 64px;
 		font-weight: 700;
 		letter-spacing: 7px;
+
+		@media (max-width: 1200px) {
+			font-size: 50px;
+		}
+		@media (max-width: 992px) {
+			font-size: 42px;
+		}
+		@media (max-width: 767px) {
+			font-size: 36px;
+		}
+		@media (max-width: 550px) {
+			font-size: 14px;
+		}
 	}
 
 	&__dots {
@@ -97,6 +241,9 @@ html, body {
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
+		@media (max-width: 767px) {
+			padding-bottom: 70px;
+		}
 
 		& span {
 			width: 16px;
