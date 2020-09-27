@@ -475,8 +475,7 @@ body {
 
 .qod {
 	padding: 200px 0 160px 0;
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url("../img/qod-bg.jpg") center / cover no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/qod-bg.jpg") center / cover no-repeat;
 	@media (max-width: 767px) {
 		padding: 90px 15px;
 	}
@@ -527,9 +526,15 @@ body {
 	padding: 100px 0 120px 0;
 
 	&__title-h2 {
+		margin-bottom: 30px;
 	}
 
 	&__line {
+		display: block;
+		margin-bottom: 100px;
+		@media (max-width: 767px) {
+			margin: 0 auto 50px;
+		}
 	}
 
 	&__box {
@@ -537,10 +542,18 @@ body {
 		grid-template: 1fr 1fr / 1fr 1fr 1fr;
 		column-gap: 100px;
 		row-gap: 50px;
+		margin-bottom: 100px;
 	}
 
 	&__item {
 		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		& div {
+			position: relative;
+			z-index: 3;
+		}
 
 		& img {
 			position: absolute;
@@ -558,6 +571,11 @@ body {
 			width: 560px;
 			height: 760px;
 			z-index: 2;
+
+			font-size: 80px;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: #fff;
 		}
 
 		&_nature {
@@ -573,9 +591,31 @@ body {
 	}
 
 	&__item-text {
+		flex-basis: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 	}
 
 	&__item-actions {
+		padding: 0 38px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+	
+	&__item-link {
+		font-family: $font-rare;
+		font-size: 15px;
+		font-weight: 700;
+		color: #fff;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	&__item-link-buy {
@@ -585,11 +625,16 @@ body {
 	}
 
 	&__subgrid {
+		grid-row: 2 / 3;
+		grid-column: 2 / 4;
 		display: grid;
 		grid-template: 1fr / 1fr 1fr;
+		column-gap: 80px;
 	}
 
 	&__button {
+		margin: 0 auto;
+		cursor: pointer;
 	}
 }
 

@@ -686,15 +686,38 @@ body {
   padding: 100px 0 120px 0;
 }
 
+.posters__title-h2 {
+  margin-bottom: 30px;
+}
+
+.posters__line {
+  display: block;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  .posters__line {
+    margin: 0 auto 50px;
+  }
+}
+
 .posters__box {
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr 1fr;
   column-gap: 100px;
   row-gap: 50px;
+  margin-bottom: 100px;
 }
 
 .posters__item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.posters__item div {
+  position: relative;
+  z-index: 3;
 }
 
 .posters__item img {
@@ -713,6 +736,10 @@ body {
   width: 560px;
   height: 760px;
   z-index: 2;
+  font-size: 80px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .posters__item_nature {
@@ -720,9 +747,45 @@ body {
   grid-column: 2 / 4;
 }
 
+.posters__item-text {
+  flex-basis: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.posters__item-actions {
+  padding: 0 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.posters__item-link {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.posters__item-link:hover {
+  text-decoration: underline;
+}
+
 .posters__subgrid {
+  grid-row: 2 / 3;
+  grid-column: 2 / 4;
   display: grid;
   grid-template: 1fr / 1fr 1fr;
+  column-gap: 80px;
+}
+
+.posters__button {
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .button {
