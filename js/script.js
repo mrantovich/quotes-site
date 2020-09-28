@@ -12,4 +12,11 @@ $(document).ready(function(){
 		$('.header__nav').toggleClass('_active');
 	});
 
+	$('.posters__item').mouseenter(function(){
+		$(this).find('.posters__item-actions').addClass('_hovered');
+	})
+	$('.posters__item').mouseleave(function(){
+		$(this).find('.posters__item-actions').removeClass('_hovered');
+	})
+
 });

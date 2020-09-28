@@ -343,6 +343,7 @@ body {
 			flex-basis: 100%;
 			display: flex;
 			justify-content: center;
+			padding: 70px 15px 100px 15px;
 		}
 	}
 
@@ -351,10 +352,13 @@ body {
 	}
 
 	&__slider-box {
-		width: $slider-width;
+		max-width: $slider-width;
 		font-size: 36px;
 		@media (max-width: 1230px) {
-			width: $slider-width-less;
+			max-width: $slider-width-less;
+		}
+		@media (max-width: 460px) {
+			font-size: 28px;
 		}
 	}
 
@@ -524,6 +528,9 @@ body {
 
 .posters {
 	padding: 100px 0 120px 0;
+	@media (max-width: 767px) {
+		padding: 70px 15px;
+	}
 
 	&__title-h2 {
 		margin-bottom: 30px;
@@ -543,6 +550,22 @@ body {
 		column-gap: 100px;
 		row-gap: 50px;
 		margin-bottom: 100px;
+		height: 760px;
+		@media (max-width: 1385px) {
+			column-gap: 70px;
+			row-gap: 30px;
+			height: 560px;
+		}
+		@media (max-width: 1175px) {
+			column-gap: 20px;
+			row-gap: 20px;
+			height: 360px;
+		}
+		@media (max-width: 992px) {
+			grid-template: 1fr 1fr 1fr / 1fr;
+			height: auto;
+			margin-bottom: 40px;
+		}
 	}
 
 	&__item {
@@ -555,7 +578,7 @@ body {
 			z-index: 3;
 		}
 
-		& img {
+		& img.posters__item-img-bg {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -568,25 +591,97 @@ body {
 		&_gentleman {
 			grid-row: 1 / 3;
 			grid-column: 1 / 2;
-			width: 560px;
-			height: 760px;
 			z-index: 2;
 
 			font-size: 80px;
 			font-weight: 400;
 			text-transform: uppercase;
 			color: #fff;
+
+			@media (max-width: 992px) {
+				grid-row: 1 / 2;
+				grid-column: 1 / 2;
+			}
+			@media (max-width: 767px) {
+				font-size: 50px;
+			}
+			@media (max-width: 420px) {
+				font-size: 32px;
+			}
 		}
 
 		&_nature {
 			grid-row: 1 / 2;
 			grid-column: 2 / 4;
+			padding-left: 80px;
+
+			& div.posters__item-text {
+				max-width: 300px;
+				display: flex;
+				flex-direction: column;
+				text-align: left;
+				align-items: flex-start;
+
+				font-family: $font-tnr;
+				font-weight: 700;
+				font-style: italic;
+				font-size: 36px;
+				color: #000;
+
+				& span {
+					display: inline-block;
+					font-family: $font-g;
+					font-size: 15px;
+					font-style: normal;
+					font-weight: 400;
+					margin-top: 20px;
+				}
+			}
+
+			@media (max-width: 992px) {
+				grid-row: 2 / 3;
+				grid-column: 1 / 2;
+			}
 		}
 
 		&_coffee {
+			& div.posters__item-text {
+				max-width: 154px;
+				padding-top: 35px;
+				margin: 0 auto;
+				font-family: $font-tnr;
+				font-weight: 700;
+				font-size: 30px;
+				color: #000;
+				align-items: flex-start;
+			}
+
+			& div.posters__item-actions {
+				flex-direction: column;
+			}
 		}
 
 		&_silence {
+			& div.posters__item-text {
+				max-width: 150px;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				color: #fefefe;
+				font-family: $font-secondary;
+				font-size: 30px;
+				font-weight: 700;
+				text-transform: uppercase;
+				& span {
+					display: inline-block;
+					font-size: 37px;
+					font-weight: 700;
+				}
+			}
+
+			& div.posters__item-actions {
+				flex-direction: column;
+			}
 		}
 	}
 
@@ -600,9 +695,27 @@ body {
 
 	&__item-actions {
 		padding: 0 38px;
+		flex-basis: 10%;
 		display: flex;
 		justify-content: space-between;
-		align-items: flex-end;
+		align-items: center;
+
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.3s;
+		&._hovered {
+			transition: 0.3s;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		@media (max-width: 1385px) {
+			padding: 0 14px;
+		}
+		@media (max-width: 992px) {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 	
 	&__item-link {
@@ -616,12 +729,27 @@ body {
 		&:hover {
 			text-decoration: underline;
 		}
+
+		@media (max-width: 1175px) {
+			font-size: 12px;
+		}
+
 	}
 
+	&__item-link-container {
+		display: flex;
+		& img {
+			width: 30px;
+			height: 20px;
+			object-fit: cover;
+		}
+	}
 	&__item-link-buy {
 	}
 
-	&__itme-link-share {
+	&__item-link-share {
+		display: block;
+		margin-right: 10px;
 	}
 
 	&__subgrid {
@@ -630,6 +758,22 @@ body {
 		display: grid;
 		grid-template: 1fr / 1fr 1fr;
 		column-gap: 80px;
+		@media (max-width: 1385px) {
+			column-gap: 50px;
+		}
+		@media (max-width: 1175px) {
+			column-gap: 20px;
+		}
+		@media (max-width: 992px) {
+			grid-row: 3 / 4;
+			grid-column: 1 / 2;
+		}
+		@media (max-width: 767px) {
+			grid-template: 1fr 1fr / 1fr;
+			column-gap: 0;
+			row-gap: 20px;
+			height: auto;
+		}
 	}
 
 	&__button {
@@ -657,6 +801,11 @@ body {
 	&:hover {
 		color: #fff;
 		background-color: #000;
+	}
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+		width: 240px;
 	}
 }
 

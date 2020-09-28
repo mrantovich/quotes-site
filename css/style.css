@@ -479,6 +479,7 @@ body {
     flex-basis: 100%;
     display: flex;
     justify-content: center;
+    padding: 70px 15px 100px 15px;
   }
 }
 
@@ -487,13 +488,19 @@ body {
 }
 
 .quotes__slider-box {
-  width: 520px;
+  max-width: 520px;
   font-size: 36px;
 }
 
 @media (max-width: 1230px) {
   .quotes__slider-box {
-    width: 430px;
+    max-width: 430px;
+  }
+}
+
+@media (max-width: 460px) {
+  .quotes__slider-box {
+    font-size: 28px;
   }
 }
 
@@ -686,6 +693,12 @@ body {
   padding: 100px 0 120px 0;
 }
 
+@media (max-width: 767px) {
+  .posters {
+    padding: 70px 15px;
+  }
+}
+
 .posters__title-h2 {
   margin-bottom: 30px;
 }
@@ -707,6 +720,31 @@ body {
   column-gap: 100px;
   row-gap: 50px;
   margin-bottom: 100px;
+  height: 760px;
+}
+
+@media (max-width: 1385px) {
+  .posters__box {
+    column-gap: 70px;
+    row-gap: 30px;
+    height: 560px;
+  }
+}
+
+@media (max-width: 1175px) {
+  .posters__box {
+    column-gap: 20px;
+    row-gap: 20px;
+    height: 360px;
+  }
+}
+
+@media (max-width: 992px) {
+  .posters__box {
+    grid-template: 1fr 1fr 1fr / 1fr;
+    height: auto;
+    margin-bottom: 40px;
+  }
 }
 
 .posters__item {
@@ -720,7 +758,7 @@ body {
   z-index: 3;
 }
 
-.posters__item img {
+.posters__item img.posters__item-img-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -733,8 +771,6 @@ body {
 .posters__item_gentleman {
   grid-row: 1 / 3;
   grid-column: 1 / 2;
-  width: 560px;
-  height: 760px;
   z-index: 2;
   font-size: 80px;
   font-weight: 400;
@@ -742,9 +778,95 @@ body {
   color: #fff;
 }
 
+@media (max-width: 992px) {
+  .posters__item_gentleman {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .posters__item_gentleman {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 420px) {
+  .posters__item_gentleman {
+    font-size: 32px;
+  }
+}
+
 .posters__item_nature {
   grid-row: 1 / 2;
   grid-column: 2 / 4;
+  padding-left: 80px;
+}
+
+.posters__item_nature div.posters__item-text {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 36px;
+  color: #000;
+}
+
+.posters__item_nature div.posters__item-text span {
+  display: inline-block;
+  font-family: "Georgia", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .posters__item_nature {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+}
+
+.posters__item_coffee div.posters__item-text {
+  max-width: 154px;
+  padding-top: 35px;
+  margin: 0 auto;
+  font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #000;
+  align-items: flex-start;
+}
+
+.posters__item_coffee div.posters__item-actions {
+  flex-direction: column;
+}
+
+.posters__item_silence div.posters__item-text {
+  max-width: 150px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: #fefefe;
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.posters__item_silence div.posters__item-text span {
+  display: inline-block;
+  font-size: 37px;
+  font-weight: 700;
+}
+
+.posters__item_silence div.posters__item-actions {
+  flex-direction: column;
 }
 
 .posters__item-text {
@@ -757,9 +879,32 @@ body {
 
 .posters__item-actions {
   padding: 0 38px;
+  flex-basis: 10%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.posters__item-actions._hovered {
+  transition: 0.3s;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 1385px) {
+  .posters__item-actions {
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  .posters__item-actions {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .posters__item-link {
@@ -775,12 +920,61 @@ body {
   text-decoration: underline;
 }
 
+@media (max-width: 1175px) {
+  .posters__item-link {
+    font-size: 12px;
+  }
+}
+
+.posters__item-link-container {
+  display: flex;
+}
+
+.posters__item-link-container img {
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.posters__item-link-share {
+  display: block;
+  margin-right: 10px;
+}
+
 .posters__subgrid {
   grid-row: 2 / 3;
   grid-column: 2 / 4;
   display: grid;
   grid-template: 1fr / 1fr 1fr;
   column-gap: 80px;
+}
+
+@media (max-width: 1385px) {
+  .posters__subgrid {
+    column-gap: 50px;
+  }
+}
+
+@media (max-width: 1175px) {
+  .posters__subgrid {
+    column-gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .posters__subgrid {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .posters__subgrid {
+    grid-template: 1fr 1fr / 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+    height: auto;
+  }
 }
 
 .posters__button {
@@ -808,6 +1002,13 @@ body {
 .button:hover {
   color: #fff;
   background-color: #000;
+}
+
+@media (max-width: 767px) {
+  .button {
+    font-size: 16px;
+    width: 240px;
+  }
 }
 
 .title {
