@@ -690,6 +690,7 @@ body {
 }
 
 .posters {
+  background-color: #eaeef1;
   padding: 100px 0 120px 0;
 }
 
@@ -980,6 +981,86 @@ body {
 .posters__button {
   margin: 0 auto;
   cursor: pointer;
+}
+
+.footer {
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer__top {
+  padding: 125px 0 100px 0;
+}
+
+.footer__top-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__top-column {
+  flex-basis: 25%;
+}
+
+.footer__top-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 55px;
+}
+
+.footer__top-list li {
+  margin-bottom: 20px;
+}
+
+.footer__top-list li:last-child {
+  margin-bottom: 0;
+}
+
+.footer__top-link {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: 2.4px;
+}
+
+.footer__top-link:hover {
+  text-decoration: underline;
+}
+
+.footer__top-contact {
+  margin-bottom: 50px;
+}
+
+.footer__top-contact p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2.4px;
+  margin-bottom: 14px;
+}
+
+.footer__top-contact p:last-child {
+  margin-bottom: 0;
+}
+
+.footer__top-contact:last-child {
+  margin-bottom: 0;
+}
+
+.footer__top-subscribe-info {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2.4px;
+  line-height: 28px;
+}
+
+.footer__bottom {
+  height: 90px;
+  background-color: #eaeef1;
+}
+
+.footer__bottom-box {
+  display: flex;
+  justify-content: space-between;
 }
 
 .button {

@@ -527,6 +527,7 @@ body {
 }
 
 .posters {
+	background-color: #eaeef1;
 	padding: 100px 0 120px 0;
 	@media (max-width: 767px) {
 		padding: 70px 15px;
@@ -782,6 +783,101 @@ body {
 	}
 }
 
+.footer {
+	font-family: $font-rare;
+
+	&__top {
+		padding: 125px 0 100px 0;
+	}
+
+	&__top-box {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__top-column {
+		flex-basis: 25%;
+	}
+
+	&__top-title {
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		margin-bottom: 55px;
+	}
+
+	&__top-list {
+		& li {
+			margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__top-link {
+		font-size: 16px;
+		font-weight: 400;
+		color: #000;
+		letter-spacing: 2.4px;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__top-contact {
+		& p {
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: 2.4px;
+			margin-bottom: 14px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		margin-bottom: 50px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__top-subscribe-info {
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 2.4px;
+		line-height: 28px;
+	}
+
+	&__top-form {
+	}
+
+	&__top-form-input {
+	}
+
+	&__top-form-button {
+	}
+
+	&__bottom {
+		height: 90px;
+		background-color: #eaeef1;
+	}
+
+	&__bottom-box {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__bottom-copy {
+	}
+
+	&__bottom-socials {
+	}
+
+	&__bottom-list {
+	}
+}
+
 .button {
 	display: flex;
 	align-items: center;
@@ -797,6 +893,9 @@ body {
 	border: 2px solid #000;
 	border-radius: 4px;
 	transition: 0.4s;
+
+	&_small {
+	}
 
 	&:hover {
 		color: #fff;
