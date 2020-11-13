@@ -120,6 +120,14 @@ body {
   }
 }
 
+.header__menu-wrap {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
+
 .header__menu {
   font-family: "Montserrat", sans-serif;
   color: #fff;
@@ -128,7 +136,9 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.5px;
   cursor: pointer;
-  position: relative;
+  position: absolute;
+  top: 36px;
+  left: 0;
   z-index: 3;
   transition: 0.5s;
 }
@@ -225,6 +235,7 @@ body {
 .header__nav._active {
   opacity: 1;
   visibility: visible;
+  overflow: hidden;
 }
 
 .header__link {

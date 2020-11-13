@@ -50,6 +50,14 @@ body {
 		}
 	}
 
+	&__menu-wrap {
+		width: 64px;
+		height: 64px;
+		position: relative;
+		cursor: pointer;
+		z-index: 10;
+	}
+
 	&__menu {
 		font-family: $font-rare;
 		color: #fff;
@@ -58,7 +66,9 @@ body {
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
 		cursor: pointer;
-		position: relative;
+		position: absolute;
+		top: 36px;
+		left: 0;
 		z-index: 3;
 		transition: 0.5s;
 
@@ -140,6 +150,7 @@ body {
 		&._active {
 			opacity: 1;
 			visibility: visible;
+			overflow: hidden;
 		}
 	}
 

@@ -1,12 +1,13 @@
 $(document).ready(function(){
 
-	$('.header__menu').click(function(){
+	$('.header__menu-wrap').click(function(){
 		$(this).toggleClass('_active');
-		if ($(this).hasClass('_active')) {
-			$(this).text('close');
+		$('.header__menu').toggleClass('_active');
+		if ($('.header__menu').hasClass('_active')) {
+			$('.header__menu').text('close');
 		}
 		else {
-			$(this).text('menu');
+			$('.header__menu').text('menu');
 		}
 
 		$('.header__nav').toggleClass('_active');
