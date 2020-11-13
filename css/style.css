@@ -948,9 +948,16 @@ body {
   object-fit: cover;
 }
 
+.posters__item-link-buy {
+  color: #000;
+  margin-bottom: 10px;
+}
+
 .posters__item-link-share {
   display: block;
   margin-right: 10px;
+  margin-bottom: 10px;
+  color: #000;
 }
 
 .posters__subgrid {
